@@ -1,0 +1,20 @@
+dubbo:
+  application:
+    name: demo-dubbo
+    owner: luoan
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    basePackages: com.anla.dubbo
+  provider:
+    timeout: 5000
+    threads: 100
+    filter: log,exceptionFilter
+  consumer:
+    timeout: 5000
+    check: false
+  module:
+    default: false

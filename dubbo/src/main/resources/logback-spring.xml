@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <logger name="org.springframework.web" level="INFO"/>
+
+    <property name="logPath" value="/data/weblog/demo-parent/demo-api/"/>
+
+    <appender name="FILE-OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>${logPath}/demo-api.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--按天压缩-->
+            <fileNamePattern> ${logPath}/demo-api.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+            <!-- 保存1个月内的数据-->
+            <maxHistory>2</maxHistory>
+            <!--最多保留文件大小-->
+            <totalSizeCap>5GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <charset>utf-8</charset>
+            <Pattern>[%p] | %d{yyyy-MM-dd HH:mm:ss.SSS} | %t | %X{traceId} | %C{1}:%M | %L | %m %n</Pattern>
+        </encoder>
+    </appender>
+
+    <!-- 开发、测试环境 -->
+    <springProfile name="dev,test">
+        <logger name="org.springframework.web" level="INFO"/>
+        <logger name="com.anla" level="TRACE" />
+    </springProfile>
+
+    <!-- 预发布、生产环境 -->
+    <springProfile name="pre,prod">
+        <logger name="org.springframework.web" level="INFO"/>
+        <logger name="com.anla" level="INFO" />
+    </springProfile>
+
+    <root level="info">
+        <appender-ref ref="FILE-OUT"/>
+    </root>
+
+</configuration>
