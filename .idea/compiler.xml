@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="stub" />
         <module name="api" />
+        <module name="pureapi" />
         <module name="dubbo" />
       </profile>
     </annotationProcessing>
@@ -26,6 +27,7 @@
       <module name="demostub" options="" />
       <module name="dubbo" options="-parameters" />
       <module name="hellodubbo" options="-parameters" />
+      <module name="pureapi" options="-parameters" />
       <module name="stub" options="-parameters" />
     </option>
   </component>
