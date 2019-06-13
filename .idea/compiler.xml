@@ -25,6 +25,7 @@
       <module name="demodubbo" options="-parameters" />
       <module name="demostub" options="" />
       <module name="dubbo" options="-parameters" />
+      <module name="hellodubbo" options="-parameters" />
       <module name="stub" options="-parameters" />
     </option>
   </component>
