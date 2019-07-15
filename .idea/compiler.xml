@@ -10,6 +10,7 @@
         <module name="api" />
         <module name="pureapi" />
         <module name="dubbo" />
+        <module name="test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -29,6 +30,7 @@
       <module name="hellodubbo" options="-parameters" />
       <module name="pureapi" options="-parameters" />
       <module name="stub" options="-parameters" />
+      <module name="test" options="-parameters" />
     </option>
   </component>
 </project>
