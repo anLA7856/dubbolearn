@@ -12,6 +12,8 @@
         <module>hellodubbo</module>
         <module>pureapi</module>
         <module>test</module>
+        <module>learnsamples</module>
+        <module>annotationdubbo</module>
     </modules>
 
     <parent>
