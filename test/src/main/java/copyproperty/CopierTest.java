@@ -1,6 +1,9 @@
 package copyproperty;
 
+import com.google.common.base.Stopwatch;
 import net.sf.cglib.beans.BeanCopier;
+import org.apache.commons.beanutils.PropertyUtils;
+import org.springframework.beans.BeanUtils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.TimeUnit;
@@ -11,29 +14,29 @@ import java.util.concurrent.TimeUnit;
  * @date 2019/7/3 16:26
  **/
 public class ApacheCopy {
-    private static void testCglibBeanCopier(OriginObject origin, int len) {
+    private static void testCglibBeanCopier(BaseDog origin, int len) {
         Stopwatch stopwatch = Stopwatch.createStarted();
         System.out.println();
         System.out.println("================cglib BeanCopier执行" + len + "次================");
-        DestinationObject destination3 = new DestinationObject();
+        Dog dog = new Dog();
 
         for (int i = 0; i < len; i++) {
-            BeanCopier copier = BeanCopier.create(OriginObject.class, DestinationObject.class, false);
-            copier.copy(origin, destination3, null);
+            BeanCopier copier = BeanCopier.create(BaseDog.class, Dog.class, false);
+            copier.copy(origin, dog, null);
         }
         stopwatch.stop();
 
         System.out.println("testCglibBeanCopier 耗时: " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
     }
 
-    private static void testApacheBeanUtils(OriginObject origin, int len)
+    private static void testApacheBeanUtils(BaseDog origin, int len)
             throws IllegalAccessException, InvocationTargetException {
         Stopwatch stopwatch = Stopwatch.createStarted();
         System.out.println();
         System.out.println("================apache BeanUtils执行" + len + "次================");
-        DestinationObject destination2 = new DestinationObject();
+        Dog dog = new Dog();
         for (int i = 0; i < len; i++) {
-            BeanUtils.copyProperties(destination2, origin);
+            BeanUtils.copyProperties(origin, dog);
         }
 
         stopwatch.stop();
@@ -41,13 +44,13 @@ public class ApacheCopy {
         System.out.println("testApacheBeanUtils 耗时: " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
     }
 
-    private static void testSpringFramework(OriginObject origin, int len) {
+    private static void testSpringFramework(BaseDog origin, int len) {
         Stopwatch stopwatch = Stopwatch.createStarted();
         System.out.println("================springframework执行" + len + "次================");
-        DestinationObject destination = new DestinationObject();
+        Dog dog = new Dog();
 
         for (int i = 0; i < len; i++) {
-            org.springframework.beans.BeanUtils.copyProperties(origin, destination);
+            org.springframework.beans.BeanUtils.copyProperties(origin, dog);
         }
 
         stopwatch.stop();
@@ -55,14 +58,14 @@ public class ApacheCopy {
         System.out.println("testSpringFramework 耗时: " + stopwatch.elapsed(TimeUnit.MILLISECONDS));
     }
 
-    private static void testApacheBeanUtilsPropertyUtils(OriginObject origin, int len)
+    private static void testApacheBeanUtilsPropertyUtils(BaseDog origin, int len)
             throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
         Stopwatch stopwatch = Stopwatch.createStarted();
         System.out.println();
         System.out.println("================apache BeanUtils PropertyUtils执行" + len + "次================");
-        DestinationObject destination2 = new DestinationObject();
+        Dog dog = new Dog();
         for (int i = 0; i < len; i++) {
-            PropertyUtils.copyProperties(destination2, origin);
+            PropertyUtils.copyProperties(origin, dog);
         }
 
         stopwatch.stop();

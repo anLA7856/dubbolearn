@@ -28,6 +28,28 @@
         <curator.version>4.0.0</curator.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <name>Nexus aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <!--
+    settings 文件配置
+     <mirror>
+        <id>nexus-aliyun</id>
+        <mirrorOf>*</mirrorOf>
+        <name>Nexus aliyun</name>
+        <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+    </mirror>
 
+    -->
 
 </project>
