@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  * @date 2019/7/3 16:26
  **/
-public class ApacheCopy {
+public class CopierTest {
     private static void testCglibBeanCopier(BaseDog origin, int len) {
         Stopwatch stopwatch = Stopwatch.createStarted();
         System.out.println();

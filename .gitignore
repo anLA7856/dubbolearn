@@ -32,3 +32,11 @@ release.properties
 .DS_Store
 Thumbs.db
 /bin/
+hellodubbo/api/src/test/
+hellodubbo/dubbo/src/test/
+hellodubbo/stub/src/main/resources/
+hellodubbo/stub/src/test/
+pureapi/src/main/resources/
+pureapi/src/test/
+test/src/main/resources/
+test/src/test/
