@@ -1,15 +1,14 @@
-package com.anla.rpc.annotation;
+package com.anla.rpc.annotation.dubbo;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.concurrent.CountDownLatch;
 
 /**
- * 用于启动项目
- * @author anLA7856
- * @date 19-7-15 下午10:52
- * @description
- */
+ * @author luoan
+ * @version 1.0
+ * @date 2019/7/16 16:43
+ **/
 public class Provider {
     public static void main(String[] args) throws Exception {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ProviderConfiguration.class);

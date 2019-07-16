@@ -10,6 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>annotationdubbo</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>provider</module>
+        <module>consumer</module>
+        <module>annotationapi</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -76,6 +82,12 @@
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-x-discovery</artifactId>
             <version>4.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.anla.rpc</groupId>
+            <artifactId>provider</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

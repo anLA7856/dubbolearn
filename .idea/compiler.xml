@@ -10,18 +10,21 @@
         <module name="stub" />
         <module name="dubbo" />
         <module name="learnsamples" />
-        <module name="annotationdubbo" />
+        <module name="provider" />
+        <module name="annotationapi" />
         <module name="pureapi" />
         <module name="api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="annotationapi" target="1.8" />
       <module name="annotationdubbo" target="1.8" />
       <module name="api" target="1.8" />
       <module name="dubbo" target="1.8" />
       <module name="dubbolearn" target="1.8" />
       <module name="hellodubbo" target="1.8" />
       <module name="learnsamples" target="1.8" />
+      <module name="provider" target="1.8" />
       <module name="pureapi" target="1.8" />
       <module name="stub" target="1.8" />
       <module name="test" target="1.8" />
@@ -29,10 +32,12 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="annotationapi" options="-parameters" />
       <module name="annotationdubbo" options="-parameters" />
       <module name="api" options="-parameters" />
       <module name="dubbo" options="-parameters" />
       <module name="learnsamples" options="-parameters" />
+      <module name="provider" options="-parameters" />
       <module name="pureapi" options="-parameters" />
       <module name="stub" options="-parameters" />
       <module name="test" options="-parameters" />

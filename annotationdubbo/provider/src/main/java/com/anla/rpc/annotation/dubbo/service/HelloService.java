@@ -1,4 +1,4 @@
-package com.anla.rpc.annotation.service;
+package com.anla.rpc.annotation.dubbo.service;
 
 /**
  * @author anLA7856

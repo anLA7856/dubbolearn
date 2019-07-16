@@ -1,3 +1,5 @@
+# 这个 @EnableDubbo 好像还不支持yml文件。这就尴尬了。
+# 需要注意钻研一下
 dubbo:
   application:
     name: provider

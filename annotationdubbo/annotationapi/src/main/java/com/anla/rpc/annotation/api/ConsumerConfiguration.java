@@ -1,4 +1,4 @@
-package com.anla.rpc.annotation;
+package com.anla.rpc.annotation.api;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
  */
 @Configuration
 @EnableDubbo(scanBasePackages = "com.anla.rpc.annotation.api")
-@PropertySource("classpath:dubbo-consumer.yml")
+@PropertySource("classpath:dubbo/dubbo-consumer.properties")
 @ComponentScan(value = {"com.anla.rpc.annotation.api"})
 public class ConsumerConfiguration {
 

@@ -1,7 +1,6 @@
 package com.anla.rpc.annotation.api;
-
-import com.anla.rpc.annotation.service.GoodByeService;
-import com.anla.rpc.annotation.service.HelloService;
+import com.anla.rpc.annotation.dubbo.service.GoodByeService;
+import com.anla.rpc.annotation.dubbo.service.HelloService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Component;
 

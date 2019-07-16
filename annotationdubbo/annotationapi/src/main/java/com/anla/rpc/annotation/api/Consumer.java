@@ -1,6 +1,5 @@
-package com.anla.rpc.annotation;
+package com.anla.rpc.annotation.api;
 
-import com.anla.rpc.annotation.api.HelloFacadeAPI;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
