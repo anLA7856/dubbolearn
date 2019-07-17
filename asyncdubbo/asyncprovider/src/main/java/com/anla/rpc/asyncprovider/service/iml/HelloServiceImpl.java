@@ -10,6 +10,7 @@ import com.anla.rpc.asyncprovider.service.HelloService;
 public class HelloServiceImpl implements HelloService {
     @Override
     public String hello(String name) {
+        System.out.println(" 被调用了，name 为 " + name);
         return "hello, Ms." + name;
     }
 }

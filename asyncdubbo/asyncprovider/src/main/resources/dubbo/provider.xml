@@ -15,6 +15,10 @@
 
     <bean id="helloService" class="com.anla.rpc.asyncprovider.service.iml.HelloServiceImpl"/>
 
-    <dubbo:service interface="com.anla.rpc.asyncprovider.service.HelloService" ref="helloService"/>
+    <dubbo:service interface="com.anla.rpc.asyncprovider.service.HelloService" ref="helloService" version="1.0.0"/>
+
+    <bean id="asyncContextHelloService" class="com.anla.rpc.asyncprovider.service.iml.AsyncContextHelloServiceImpl" />
+
+    <dubbo:service interface="com.anla.rpc.asyncprovider.service.HelloService" ref="asyncContextHelloService" version="1.0.1" />
 
 </beans>

@@ -20,8 +20,8 @@ public class Consumer {
         context.start();
 
         // 第一种
-        HelloService asyncService = context.getBean("asyncService", HelloService.class);
-        asyncService.hello("anla7856");
+        HelloService helloService = context.getBean("helloService", HelloService.class);
+        helloService.hello("anla7856");
         CompletableFuture<String> helloFuture = RpcContext.getContext().getCompletableFuture();
         helloFuture.whenComplete((retValue, exception) -> {
             if (exception == null) {
@@ -31,8 +31,8 @@ public class Consumer {
             }
         });
 
-        // 第一种
-        CompletableFuture<String> future = RpcContext.getContext().asyncCall(() -> asyncService.hello("async call request"));
+        // 第二种
+        CompletableFuture<String> future = RpcContext.getContext().asyncCall(() -> helloService.hello("async call request"));
         try {
             System.out.println("async call returned: " + future.get());
         } catch (InterruptedException e) {
@@ -41,9 +41,15 @@ public class Consumer {
             e.printStackTrace();
         }
 
-        // 第一种
+        // 第三种
         RpcContext.getContext().asyncCall(() -> {
-            asyncService.hello("one way call request1");
+            helloService.hello("one way call request1");
         });
+
+        // 第四种，使用 AsyncContext 来获取数据
+        RpcContext.getContext().setAttachment("consumer-key1", "consumer-value1");
+        HelloService asyncContextHelloService = context.getBean("asyncContextHelloService", HelloService.class);
+
+        System.out.println(asyncContextHelloService.hello("async call request"));
     }
 }
