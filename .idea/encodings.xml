@@ -4,8 +4,10 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/annotationdubbo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/annotationdubbo/annotationapi" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/annotationdubbo/consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/annotationdubbo/provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asyncdubbo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asyncdubbo/asyncconsumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/asyncdubbo/asyncprovider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hellodubbo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hellodubbo/api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hellodubbo/dubbo" charset="UTF-8" />

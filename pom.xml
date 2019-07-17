@@ -14,6 +14,7 @@
         <module>test</module>
         <module>learnsamples</module>
         <module>annotationdubbo</module>
+        <module>asyncdubbo</module>
     </modules>
 
     <parent>
