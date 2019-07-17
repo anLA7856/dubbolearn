@@ -16,19 +16,6 @@
         <module name="api" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="annotationapi" target="1.8" />
-      <module name="annotationdubbo" target="1.8" />
-      <module name="api" target="1.8" />
-      <module name="dubbo" target="1.8" />
-      <module name="dubbolearn" target="1.8" />
-      <module name="hellodubbo" target="1.8" />
-      <module name="learnsamples" target="1.8" />
-      <module name="provider" target="1.8" />
-      <module name="pureapi" target="1.8" />
-      <module name="stub" target="1.8" />
-      <module name="test" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
