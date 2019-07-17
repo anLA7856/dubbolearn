@@ -11,6 +11,8 @@
         <module name="dubbo" />
         <module name="learnsamples" />
         <module name="provider" />
+        <module name="asyncconsumer" />
+        <module name="asyncprovider" />
         <module name="annotationapi" />
         <module name="pureapi" />
         <module name="api" />
@@ -20,6 +22,9 @@
       <module name="annotationapi" target="1.8" />
       <module name="annotationdubbo" target="1.8" />
       <module name="api" target="1.8" />
+      <module name="asyncconsumer" target="1.8" />
+      <module name="asyncdubbo" target="1.8" />
+      <module name="asyncprovider" target="1.8" />
       <module name="dubbo" target="1.8" />
       <module name="dubbolearn" target="1.8" />
       <module name="hellodubbo" target="1.8" />
@@ -35,6 +40,9 @@
       <module name="annotationapi" options="-parameters" />
       <module name="annotationdubbo" options="-parameters" />
       <module name="api" options="-parameters" />
+      <module name="asyncconsumer" options="-parameters" />
+      <module name="asyncdubbo" options="-parameters" />
+      <module name="asyncprovider" options="-parameters" />
       <module name="dubbo" options="-parameters" />
       <module name="learnsamples" options="-parameters" />
       <module name="provider" options="-parameters" />
