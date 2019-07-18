@@ -16,6 +16,7 @@
         <module>annotationdubbo</module>
         <module>asyncdubbo</module>
         <module>callback</module>
+        <module>filter</module>
     </modules>
 
     <parent>

@@ -11,6 +11,9 @@
     <file url="file://$PROJECT_DIR$/callback" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/callback/callbackconsumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/callback/callbackprovider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/filter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/filter/filterconsumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/filter/filterprovider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hellodubbo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hellodubbo/api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hellodubbo/dubbo" charset="UTF-8" />

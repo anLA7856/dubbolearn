@@ -6,18 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="annotationapi" />
+        <module name="callbackprovider" />
+        <module name="pureapi" />
         <module name="test" />
+        <module name="provider" />
+        <module name="filterconsumer" />
+        <module name="asyncprovider" />
+        <module name="learnsamples" />
         <module name="stub" />
         <module name="dubbo" />
-        <module name="learnsamples" />
-        <module name="provider" />
-        <module name="asyncconsumer" />
-        <module name="callbackprovider" />
-        <module name="callbackconsumer" />
-        <module name="asyncprovider" />
-        <module name="annotationapi" />
-        <module name="pureapi" />
+        <module name="filterprovider" />
         <module name="api" />
+        <module name="asyncconsumer" />
+        <module name="callbackconsumer" />
       </profile>
     </annotationProcessing>
   </component>
@@ -33,6 +35,8 @@
       <module name="callbackconsumer" options="-parameters" />
       <module name="callbackprovider" options="-parameters" />
       <module name="dubbo" options="-parameters" />
+      <module name="filterconsumer" options="-parameters" />
+      <module name="filterprovider" options="-parameters" />
       <module name="learnsamples" options="-parameters" />
       <module name="provider" options="-parameters" />
       <module name="pureapi" options="-parameters" />
