@@ -15,7 +15,7 @@ import java.util.concurrent.ExecutionException;
  * @date 2019/7/17 17:43
  **/
 public class Consumer {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("dubbo/consumer.xml");
         context.start();
 
@@ -51,5 +51,9 @@ public class Consumer {
         HelloService asyncContextHelloService = context.getBean("asyncContextHelloService", HelloService.class);
 
         System.out.println(asyncContextHelloService.hello("async call request"));
+
+        // 使用 CompletableFuture 包装返回值
+        CompletableFuture<String> completableFuture = helloService.greeting("async call request", (byte) 1);
+        System.out.println("async call returned: " + completableFuture.get());
     }
 }

@@ -1,5 +1,7 @@
 package com.anla.rpc.asyncprovider.service;
 
+import java.util.concurrent.CompletableFuture;
+
 /**
  * @author luoan
  * @version 1.0
@@ -12,4 +14,14 @@ public interface HelloService {
      * @return
      */
     String hello(String name);
+
+    /**
+     * 使用 CompletableFuture包装返回值
+     * @param name
+     * @param signal
+     * @return
+     */
+    default CompletableFuture<String> greeting(String name, byte signal) {
+        return CompletableFuture.completedFuture(hello(name));
+    }
 }
