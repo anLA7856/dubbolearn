@@ -1,5 +1,6 @@
 package com.anla.rpc.filter.provider.service.impl;
 
+import com.anla.rpc.filter.provider.api.Dog;
 import com.anla.rpc.filter.provider.service.HelloService;
 
 import java.text.SimpleDateFormat;
@@ -19,5 +20,15 @@ public class HelloServiceImpl implements HelloService {
                 ", request from consumer: " + getContext().getRemoteAddress());
         return "Hello " + name + ", response from provider: " + getContext().getLocalAddress();
 
+    }
+
+    @Override
+    public Dog getDog(int id) {
+        if (id == 0){
+            throw new IllegalArgumentException("id is 0");
+        }
+        Dog dog = new Dog();
+        dog.setName("hello dog");
+        return dog;
     }
 }

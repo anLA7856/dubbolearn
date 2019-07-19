@@ -19,5 +19,5 @@ public interface HelloService {
      * 获取狗子
      * @return
      */
-    Dog getDog();
+    Dog getDog(int id);
 }
