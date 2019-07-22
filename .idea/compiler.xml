@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="annotationapi" />
+        <module name="apiconfigcenterconsumer" />
         <module name="callbackprovider" />
         <module name="pureapi" />
         <module name="test" />
@@ -15,6 +16,7 @@
         <module name="configcenterconsumer" />
         <module name="asyncprovider" />
         <module name="filterprovider" />
+        <module name="apiconfigcenterprovider" />
         <module name="configcenterprovider" />
         <module name="stub" />
         <module name="dubbo" />
@@ -30,6 +32,8 @@
       <module name="annotationapi" options="-parameters" />
       <module name="annotationdubbo" options="-parameters" />
       <module name="api" options="-parameters" />
+      <module name="apiconfigcenterconsumer" options="-parameters" />
+      <module name="apiconfigcenterprovider" options="-parameters" />
       <module name="asyncconsumer" options="-parameters" />
       <module name="asyncdubbo" options="-parameters" />
       <module name="asyncprovider" options="-parameters" />
