@@ -11,15 +11,17 @@
         <module name="pureapi" />
         <module name="test" />
         <module name="provider" />
-        <module name="filterconsumer" />
-        <module name="asyncprovider" />
         <module name="learnsamples" />
+        <module name="configcenterconsumer" />
+        <module name="asyncprovider" />
+        <module name="filterprovider" />
+        <module name="configcenterprovider" />
         <module name="stub" />
         <module name="dubbo" />
-        <module name="filterprovider" />
+        <module name="callbackconsumer" />
         <module name="api" />
         <module name="asyncconsumer" />
-        <module name="callbackconsumer" />
+        <module name="filterconsumer" />
       </profile>
     </annotationProcessing>
   </component>
@@ -34,6 +36,9 @@
       <module name="callback" options="-parameters" />
       <module name="callbackconsumer" options="-parameters" />
       <module name="callbackprovider" options="-parameters" />
+      <module name="configcenter" options="-parameters" />
+      <module name="configcenterconsumer" options="-parameters" />
+      <module name="configcenterprovider" options="-parameters" />
       <module name="dubbo" options="-parameters" />
       <module name="filterconsumer" options="-parameters" />
       <module name="filterprovider" options="-parameters" />

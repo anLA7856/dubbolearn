@@ -17,6 +17,7 @@
         <module>asyncdubbo</module>
         <module>callback</module>
         <module>filter</module>
+        <module>configcenter</module>
     </modules>
 
     <parent>
