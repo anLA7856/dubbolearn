@@ -18,6 +18,7 @@
         <module>callback</module>
         <module>filter</module>
         <module>configcenter</module>
+        <module>multiprotocol</module>
     </modules>
 
     <parent>

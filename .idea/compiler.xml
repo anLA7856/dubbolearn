@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="annotationapi" />
         <module name="apiconfigcenterconsumer" />
+        <module name="multiprotocolprovider" />
         <module name="callbackprovider" />
         <module name="pureapi" />
         <module name="test" />
@@ -17,6 +18,7 @@
         <module name="asyncprovider" />
         <module name="filterprovider" />
         <module name="apiconfigcenterprovider" />
+        <module name="multiprotocolconsumer" />
         <module name="configcenterprovider" />
         <module name="stub" />
         <module name="dubbo" />
@@ -47,6 +49,9 @@
       <module name="filterconsumer" options="-parameters" />
       <module name="filterprovider" options="-parameters" />
       <module name="learnsamples" options="-parameters" />
+      <module name="multiprotocol" options="-parameters" />
+      <module name="multiprotocolconsumer" options="-parameters" />
+      <module name="multiprotocolprovider" options="-parameters" />
       <module name="provider" options="-parameters" />
       <module name="pureapi" options="-parameters" />
       <module name="stub" options="-parameters" />

@@ -6,3 +6,7 @@
 即，dubbo如何确定读取哪一个配置？
 
 ## api方式的configcenter
+
+## 使用 写成的apollo 配置中心进行配置
+
+## 使用本地配置文件方式，使用spring.factories 去读取EnvironmentPostProcessor 内容
