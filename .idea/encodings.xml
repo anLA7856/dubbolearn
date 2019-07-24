@@ -16,6 +16,9 @@
     <file url="file://$PROJECT_DIR$/configcenter/apiconfigcenterprovider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/configcenter/configcenterconsumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/configcenter/configcenterprovider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/echo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/echo/echoconsumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/echo/echoprovider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/filter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/filter/filterconsumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/filter/filterprovider" charset="UTF-8" />

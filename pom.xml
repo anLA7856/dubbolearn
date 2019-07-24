@@ -20,6 +20,7 @@
         <module>configcenter</module>
         <module>multiprotocol</module>
         <module>rpccontext</module>
+        <module>echo</module>
     </modules>
 
     <parent>
