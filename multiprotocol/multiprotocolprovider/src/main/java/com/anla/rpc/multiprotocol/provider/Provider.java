@@ -11,9 +11,9 @@ import java.util.concurrent.CountDownLatch;
  */
 public class Provider {
     public static void main(String[] args) throws Exception {
-        ZKTools.generateDubboProperties();
+//        ZKTools.generateDubboProperties();
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/configcenter-provider.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("dubbo/provider.xml");
         context.start();
 
         System.out.println("dubbo service started");

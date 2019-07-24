@@ -1,5 +1,7 @@
 package com.anla.rpc.multiprotocol;
 
+import com.anla.rpc.multiprotocol.provider.service.HelloDubboService;
+import com.anla.rpc.multiprotocol.provider.service.HelloHessianService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -9,12 +11,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Consumer {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/configcenter-consumer.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("dubbo/consumer.xml");
         context.start();
 
-        DemoService demoService = (DemoService) context.getBean("demoService");
-
-        String hello = demoService.sayHello("world");
-        System.out.println(hello);
+        HelloDubboService helloDubboService = (HelloDubboService) context.getBean("helloDubboService");
+        HelloHessianService helloHessianService = (HelloHessianService) context.getBean("helloHessianService");
+        System.out.println(helloDubboService.hello("world"));
+        System.out.println(helloHessianService.hello("world"));
     }
 }

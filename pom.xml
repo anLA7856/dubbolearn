@@ -32,7 +32,10 @@
         <guava.version>18.0</guava.version>
         <dubbo.spring.boot.starter.version>0.1.1</dubbo.spring.boot.starter.version>
         <dubbo.version>2.7.2</dubbo.version>
+        <hessian.version>4.0.38</hessian.version>
         <curator.version>4.0.0</curator.version>
+        <jetty-server.version>9.4.11.v20180605</jetty-server.version>
+        <jetty-servlet.version>9.4.11.v20180605</jetty-servlet.version>
     </properties>
 
     <repositories>
