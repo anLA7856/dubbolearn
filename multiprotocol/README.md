@@ -14,4 +14,12 @@ hessian的有点：http://dubbo.apache.org/zh-cn/docs/user/references/protocol/h
  - 适用场景：页面传输，文件传输，或与原生hessian服务互操作
  
 ## 可错误时候
-1. 注意consumer和provider包下面，都需要引入hessian的包，否则会报错 
+1. 注意consumer和provider包下面，都需要引入hessian的包，否则会报错
+
+## 注册中心
+其实这个本来是注册中心例子，如果使用了注册中心，即加上
+```
+<dubbo:config-center address="zookeeper://127.0.0.1:2181"/>
+``` 
+这样可以省略一些公共配置，只要指定注册中心，其他的dubbo配置都可以省略。
+即就是一个配置中心。
