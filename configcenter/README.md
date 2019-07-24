@@ -10,3 +10,5 @@
 ## 使用 写成的apollo 配置中心进行配置
 
 ## 使用本地配置文件方式，使用spring.factories 去读取EnvironmentPostProcessor 内容
+
+注册中心当然还有很多，例如spring cloud的eureka等。

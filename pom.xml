@@ -19,6 +19,7 @@
         <module>filter</module>
         <module>configcenter</module>
         <module>multiprotocol</module>
+        <module>rpccontext</module>
     </modules>
 
     <parent>
