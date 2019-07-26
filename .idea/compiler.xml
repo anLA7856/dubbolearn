@@ -7,30 +7,69 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apiconfigcenterconsumer" />
-        <module name="annotationapi" />
-        <module name="api" />
         <module name="multiprotocolprovider" />
+        <module name="genericprovider" />
         <module name="callbackprovider" />
         <module name="pureapi" />
+        <module name="asyncconsumer" />
         <module name="test" />
         <module name="provider" />
+        <module name="genericconsumer" />
+        <module name="filterconsumer" />
         <module name="multiprotocolconsumer" />
         <module name="configcenterconsumer" />
         <module name="asyncprovider" />
         <module name="learnsamples" />
         <module name="apiconfigcenterprovider" />
+        <module name="rpccontext" />
         <module name="echoconsumer" />
         <module name="configcenterprovider" />
         <module name="echoprovider" />
         <module name="stub" />
-        <module name="callbackconsumer" />
         <module name="dubbo" />
         <module name="filterprovider" />
-        <module name="rpccontext" />
-        <module name="asyncconsumer" />
-        <module name="filterconsumer" />
+        <module name="api" />
+        <module name="annotationapi" />
+        <module name="callbackconsumer" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="annotationapi" target="1.8" />
+      <module name="annotationdubbo" target="1.8" />
+      <module name="api" target="1.8" />
+      <module name="apiconfigcenterconsumer" target="1.8" />
+      <module name="apiconfigcenterprovider" target="1.8" />
+      <module name="asyncconsumer" target="1.8" />
+      <module name="asyncdubbo" target="1.8" />
+      <module name="asyncprovider" target="1.8" />
+      <module name="callback" target="1.8" />
+      <module name="callbackconsumer" target="1.8" />
+      <module name="callbackprovider" target="1.8" />
+      <module name="configcenter" target="1.8" />
+      <module name="configcenterconsumer" target="1.8" />
+      <module name="configcenterprovider" target="1.8" />
+      <module name="dubbo" target="1.8" />
+      <module name="dubbolearn" target="1.8" />
+      <module name="echo" target="1.8" />
+      <module name="echoconsumer" target="1.8" />
+      <module name="echoprovider" target="1.8" />
+      <module name="filter" target="1.8" />
+      <module name="filterconsumer" target="1.8" />
+      <module name="filterprovider" target="1.8" />
+      <module name="generic" target="1.8" />
+      <module name="genericconsumer" target="1.8" />
+      <module name="genericprovider" target="1.8" />
+      <module name="hellodubbo" target="1.8" />
+      <module name="learnsamples" target="1.8" />
+      <module name="multiprotocol" target="1.8" />
+      <module name="multiprotocolconsumer" target="1.8" />
+      <module name="multiprotocolprovider" target="1.8" />
+      <module name="provider" target="1.8" />
+      <module name="pureapi" target="1.8" />
+      <module name="rpccontext" target="1.8" />
+      <module name="stub" target="1.8" />
+      <module name="test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -54,6 +93,9 @@
       <module name="echoprovider" options="-parameters" />
       <module name="filterconsumer" options="-parameters" />
       <module name="filterprovider" options="-parameters" />
+      <module name="generic" options="-parameters" />
+      <module name="genericconsumer" options="-parameters" />
+      <module name="genericprovider" options="-parameters" />
       <module name="learnsamples" options="-parameters" />
       <module name="multiprotocol" options="-parameters" />
       <module name="multiprotocolconsumer" options="-parameters" />

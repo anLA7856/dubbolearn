@@ -21,6 +21,7 @@
         <module>multiprotocol</module>
         <module>rpccontext</module>
         <module>echo</module>
+        <module>generic</module>
     </modules>
 
     <parent>
