@@ -22,6 +22,7 @@
         <module>rpccontext</module>
         <module>echo</module>
         <module>generic</module>
+        <module>group</module>
     </modules>
 
     <parent>

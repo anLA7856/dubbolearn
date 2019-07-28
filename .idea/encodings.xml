@@ -25,6 +25,9 @@
     <file url="file://$PROJECT_DIR$/generic" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/generic/genericconsumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/generic/genericprovider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group/groupconsumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/group/groupprovider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hellodubbo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hellodubbo/api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hellodubbo/dubbo" charset="UTF-8" />
