@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apiconfigcenterconsumer" />
+        <module name="http" />
         <module name="annotationapi" />
         <module name="api" />
         <module name="multiprotocolprovider" />
@@ -14,6 +15,7 @@
         <module name="callbackprovider" />
         <module name="pureapi" />
         <module name="groupconsumer" />
+        <module name="containerjetty" />
         <module name="test" />
         <module name="provider" />
         <module name="echoprovider" />
@@ -52,6 +54,7 @@
       <module name="configcenter" options="-parameters" />
       <module name="configcenterconsumer" options="-parameters" />
       <module name="configcenterprovider" options="-parameters" />
+      <module name="containerjetty" options="-parameters" />
       <module name="dubbo" options="-parameters" />
       <module name="echo" options="-parameters" />
       <module name="echoconsumer" options="-parameters" />
@@ -64,6 +67,7 @@
       <module name="group" options="-parameters" />
       <module name="groupconsumer" options="-parameters" />
       <module name="groupprovider" options="-parameters" />
+      <module name="http" options="-parameters" />
       <module name="learnsamples" options="-parameters" />
       <module name="multiprotocol" options="-parameters" />
       <module name="multiprotocolconsumer" options="-parameters" />

@@ -23,6 +23,8 @@
         <module>echo</module>
         <module>generic</module>
         <module>group</module>
+        <module>http</module>
+        <module>containerjetty</module>
     </modules>
 
     <parent>
@@ -40,6 +42,7 @@
         <curator.version>4.0.0</curator.version>
         <jetty-server.version>9.4.11.v20180605</jetty-server.version>
         <jetty-servlet.version>9.4.11.v20180605</jetty-servlet.version>
+        <slf4j-version>1.7.25</slf4j-version>
     </properties>
 
     <repositories>
