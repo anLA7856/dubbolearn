@@ -1,6 +1,7 @@
 package com.anla.rpc.groupconsumer;
 
 import com.anla.rpc.groupprovider.service.HelloService;
+import org.apache.dubbo.common.constants.CommonConstants;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -9,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @description
  */
 public class Consumer {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("dubbo/consumer.xml");
         context.start();
 
@@ -21,5 +22,17 @@ public class Consumer {
 
         String resultGroupDog = helloDogService.hello("miamo");
         System.out.println(resultGroupDog);
+
+        // 获取zk的配置信息
+        printServiceData();
+    }
+
+    private static void printServiceData() throws Exception {
+        Thread.sleep(3000);
+        System.out.println("*********************************************************");
+        System.out.println("service metadata:");
+        System.out.println(ZKTools.getMetadata("/dubboMetadata", HelloService.class.getName(), "1.0.0", "groupCat",
+                CommonConstants.CONSUMER_SIDE, "consumer"));
+        System.out.println("*********************************************************");
     }
 }
