@@ -29,6 +29,7 @@
         <module>mock</module>
         <module>monitor</module>
         <module>multi-registry</module>
+        <module>notify</module>
     </modules>
 
     <parent>

@@ -10,6 +10,7 @@
         <module name="monitor" />
         <module name="annotationapi" />
         <module name="stub" />
+        <module name="notifyconsumer" />
         <module name="genericprovider" />
         <module name="dubbo" />
         <module name="metricsconsumer" />
@@ -39,6 +40,7 @@
         <module name="rpccontext" />
         <module name="containerjetty" />
         <module name="learnsamples" />
+        <module name="notifyprovider" />
         <module name="mockconsumer" />
         <module name="configcenterprovider" />
       </profile>
@@ -86,6 +88,9 @@
       <module name="multiprotocolconsumer" options="-parameters" />
       <module name="multiprotocolprovider" options="-parameters" />
       <module name="multiregistry" options="-parameters" />
+      <module name="notify" options="-parameters" />
+      <module name="notifyconsumer" options="-parameters" />
+      <module name="notifyprovider" options="-parameters" />
       <module name="provider" options="-parameters" />
       <module name="pureapi" options="-parameters" />
       <module name="rpccontext" options="-parameters" />
