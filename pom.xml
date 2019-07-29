@@ -27,6 +27,8 @@
         <module>containerjetty</module>
         <module>metrics</module>
         <module>mock</module>
+        <module>monitor</module>
+        <module>multi-registry</module>
     </modules>
 
     <parent>

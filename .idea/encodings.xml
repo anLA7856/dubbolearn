@@ -41,6 +41,8 @@
     <file url="file://$PROJECT_DIR$/mock" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mock/mockconsumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mock/mockprovider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/monitor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/multi-registry" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/multiprotocol" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/multiprotocol/multiprotocolconsumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/multiprotocol/multiprotocolprovider" charset="UTF-8" />
