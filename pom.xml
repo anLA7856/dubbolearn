@@ -25,6 +25,7 @@
         <module>group</module>
         <module>http</module>
         <module>containerjetty</module>
+        <module>metrics</module>
     </modules>
 
     <parent>

@@ -6,35 +6,37 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="test" />
+        <module name="echoconsumer" />
+        <module name="configcenterconsumer" />
+        <module name="stub" />
+        <module name="genericprovider" />
+        <module name="dubbo" />
+        <module name="metricsconsumer" />
+        <module name="echoprovider" />
+        <module name="multiprotocolconsumer" />
+        <module name="filterconsumer" />
+        <module name="asyncconsumer" />
+        <module name="callbackconsumer" />
         <module name="groupconsumer" />
         <module name="http" />
-        <module name="containerjetty" />
-        <module name="multiprotocolprovider" />
-        <module name="asyncprovider" />
-        <module name="asyncconsumer" />
-        <module name="pureapi" />
         <module name="provider" />
-        <module name="learnsamples" />
-        <module name="test" />
-        <module name="multiprotocolconsumer" />
-        <module name="genericconsumer" />
-        <module name="filterconsumer" />
         <module name="apiconfigcenterconsumer" />
-        <module name="configcenterconsumer" />
-        <module name="genericprovider" />
+        <module name="multiprotocolprovider" />
+        <module name="filterprovider" />
+        <module name="asyncprovider" />
         <module name="callbackprovider" />
         <module name="apiconfigcenterprovider" />
-        <module name="rpccontext" />
-        <module name="echoconsumer" />
-        <module name="configcenterprovider" />
-        <module name="echoprovider" />
-        <module name="stub" />
         <module name="groupprovider" />
-        <module name="dubbo" />
-        <module name="filterprovider" />
-        <module name="api" />
         <module name="annotationapi" />
-        <module name="callbackconsumer" />
+        <module name="metricsprovider" />
+        <module name="configcenterprovider" />
+        <module name="pureapi" />
+        <module name="rpccontext" />
+        <module name="containerjetty" />
+        <module name="learnsamples" />
+        <module name="api" />
+        <module name="genericconsumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -70,6 +72,9 @@
       <module name="hellodubbo" target="1.8" />
       <module name="http" target="1.8" />
       <module name="learnsamples" target="1.8" />
+      <module name="metrics" target="1.8" />
+      <module name="metricsconsumer" target="1.8" />
+      <module name="metricsprovider" target="1.8" />
       <module name="multiprotocol" target="1.8" />
       <module name="multiprotocolconsumer" target="1.8" />
       <module name="multiprotocolprovider" target="1.8" />
@@ -111,6 +116,9 @@
       <module name="groupprovider" options="-parameters" />
       <module name="http" options="-parameters" />
       <module name="learnsamples" options="-parameters" />
+      <module name="metrics" options="-parameters" />
+      <module name="metricsconsumer" options="-parameters" />
+      <module name="metricsprovider" options="-parameters" />
       <module name="multiprotocol" options="-parameters" />
       <module name="multiprotocolconsumer" options="-parameters" />
       <module name="multiprotocolprovider" options="-parameters" />
