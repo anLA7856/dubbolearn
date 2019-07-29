@@ -38,6 +38,9 @@
     <file url="file://$PROJECT_DIR$/metrics" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/metrics/metricsconsumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/metrics/metricsprovider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mock" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mock/mockconsumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mock/mockprovider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/multiprotocol" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/multiprotocol/multiprotocolconsumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/multiprotocol/multiprotocolprovider" charset="UTF-8" />

@@ -26,6 +26,7 @@
         <module>http</module>
         <module>containerjetty</module>
         <module>metrics</module>
+        <module>mock</module>
     </modules>
 
     <parent>

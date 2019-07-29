@@ -15,6 +15,7 @@
         <module name="metricsconsumer" />
         <module name="echoprovider" />
         <module name="multiprotocolconsumer" />
+        <module name="mockprovider" />
         <module name="filterconsumer" />
         <module name="asyncconsumer" />
         <module name="callbackconsumer" />
@@ -36,6 +37,7 @@
         <module name="containerjetty" />
         <module name="learnsamples" />
         <module name="api" />
+        <module name="mockconsumer" />
         <module name="genericconsumer" />
       </profile>
     </annotationProcessing>
@@ -75,6 +77,9 @@
       <module name="metrics" target="1.8" />
       <module name="metricsconsumer" target="1.8" />
       <module name="metricsprovider" target="1.8" />
+      <module name="mock" target="1.8" />
+      <module name="mockconsumer" target="1.8" />
+      <module name="mockprovider" target="1.8" />
       <module name="multiprotocol" target="1.8" />
       <module name="multiprotocolconsumer" target="1.8" />
       <module name="multiprotocolprovider" target="1.8" />
@@ -119,6 +124,9 @@
       <module name="metrics" options="-parameters" />
       <module name="metricsconsumer" options="-parameters" />
       <module name="metricsprovider" options="-parameters" />
+      <module name="mock" options="-parameters" />
+      <module name="mockconsumer" options="-parameters" />
+      <module name="mockprovider" options="-parameters" />
       <module name="multiprotocol" options="-parameters" />
       <module name="multiprotocolconsumer" options="-parameters" />
       <module name="multiprotocolprovider" options="-parameters" />
