@@ -12,3 +12,6 @@ sentinel例子
 
 在consumer中：
 所以当执行完10次后，即5次循环，就会报错
+
+
+和 resilience4j相比，sentinel更加切合dubbo，不需要显式实现过滤器之类的
