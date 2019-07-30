@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder/>
+
+    <dubbo:application name="provider"/>
+
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <dubbo:metadata-report address="zookeeper://127.0.0.1:2181" group="dubboMetadata" cycle-report="false"
+                           retry-period="4590" sync-report="true" retry-times="23"/>
+
+    <bean id="helloServiceImpl" class="com.anla.rpc.sentinel.provider.service.impl.HelloServiceImpl"/>
+
+    <dubbo:service interface="com.anla.rpc.sentinel.provider.service.HelloService"  version="1.0.0" ref="helloServiceImpl"/>
+
+</beans>
