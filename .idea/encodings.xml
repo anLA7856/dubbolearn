@@ -55,6 +55,9 @@
     <file url="file://$PROJECT_DIR$/sentinel" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sentinel/sentinelconsumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sentinel/sentinelprovider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spi/spiconsumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spi/spiprovider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test" charset="UTF-8" />
   </component>
 </project>
