@@ -6,21 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="multiprotocolconsumer" />
         <module name="test" />
+        <module name="containerjetty" />
+        <module name="echoconsumer" />
         <module name="monitor" />
-        <module name="annotationapi" />
+        <module name="configcenterconsumer" />
         <module name="stub" />
+        <module name="apiconfigcenterprovider" />
         <module name="genericprovider" />
         <module name="dubbo" />
         <module name="metricsconsumer" />
         <module name="echoprovider" />
         <module name="notifyconsumer" />
         <module name="mockprovider" />
-        <module name="configcenterconsumer" />
         <module name="filterconsumer" />
         <module name="sentinelconsumer" />
-        <module name="echoconsumer" />
+        <module name="asyncconsumer" />
         <module name="callbackconsumer" />
         <module name="apiconfigcenterconsumer" />
         <module name="http" />
@@ -31,23 +32,22 @@
         <module name="sentinelprovider" />
         <module name="asyncprovider" />
         <module name="callbackprovider" />
-        <module name="apiconfigcenterprovider" />
-        <module name="spiconsumer" />
         <module name="groupprovider" />
-        <module name="asyncconsumer" />
+        <module name="spiconsumer" />
+        <module name="annotationapi" />
         <module name="multiregistry" />
         <module name="api" />
         <module name="pureapi" />
-        <module name="genericconsumer" />
+        <module name="configcenterprovider" />
         <module name="rpccontext" />
         <module name="multi-registry" />
         <module name="spiprovider" />
-        <module name="containerjetty" />
+        <module name="multiprotocolconsumer" />
         <module name="learnsamples" />
         <module name="notifyprovider" />
         <module name="groupconsumer" />
         <module name="mockconsumer" />
-        <module name="configcenterprovider" />
+        <module name="genericconsumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
