@@ -33,6 +33,7 @@
         <module>resilience4j</module>
         <module>sentinel</module>
         <module>spi</module>
+        <module>hystrix</module>
     </modules>
 
     <parent>

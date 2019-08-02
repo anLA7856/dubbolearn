@@ -34,6 +34,9 @@
     <file url="file://$PROJECT_DIR$/hellodubbo/dubbo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hellodubbo/stub" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/http" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix/hystrixconsumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix/hystrixprovider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/learnsamples" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/metrics" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/metrics/metricsconsumer" charset="UTF-8" />

@@ -35,6 +35,7 @@
         <module name="groupprovider" />
         <module name="spiconsumer" />
         <module name="annotationapi" />
+        <module name="hystrixconsumer" />
         <module name="multiregistry" />
         <module name="api" />
         <module name="pureapi" />
@@ -45,15 +46,76 @@
         <module name="multiprotocolconsumer" />
         <module name="learnsamples" />
         <module name="notifyprovider" />
+        <module name="hystrixprovider" />
         <module name="groupconsumer" />
         <module name="mockconsumer" />
         <module name="genericconsumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="annotationapi" target="1.8" />
+      <module name="annotationdubbo" target="1.8" />
+      <module name="api" target="1.8" />
+      <module name="apiconfigcenterconsumer" target="1.8" />
+      <module name="apiconfigcenterprovider" target="1.8" />
+      <module name="asyncconsumer" target="1.8" />
+      <module name="asyncdubbo" target="1.8" />
+      <module name="asyncprovider" target="1.8" />
+      <module name="callback" target="1.8" />
+      <module name="callbackconsumer" target="1.8" />
+      <module name="callbackprovider" target="1.8" />
+      <module name="configcenter" target="1.8" />
+      <module name="configcenterconsumer" target="1.8" />
+      <module name="configcenterprovider" target="1.8" />
+      <module name="containerjetty" target="1.8" />
+      <module name="dubbo" target="1.8" />
+      <module name="dubbolearn" target="1.8" />
+      <module name="echo" target="1.8" />
+      <module name="echoconsumer" target="1.8" />
+      <module name="echoprovider" target="1.8" />
+      <module name="filter" target="1.8" />
+      <module name="filterconsumer" target="1.8" />
+      <module name="filterprovider" target="1.8" />
+      <module name="generic" target="1.8" />
+      <module name="genericconsumer" target="1.8" />
+      <module name="genericprovider" target="1.8" />
+      <module name="group" target="1.8" />
+      <module name="groupconsumer" target="1.8" />
+      <module name="groupprovider" target="1.8" />
+      <module name="hellodubbo" target="1.8" />
+      <module name="http" target="1.8" />
+      <module name="hystrix" target="1.8" />
+      <module name="hystrixconsumer" target="1.8" />
+      <module name="hystrixprovider" target="1.8" />
+      <module name="learnsamples" target="1.8" />
+      <module name="metrics" target="1.8" />
+      <module name="metricsconsumer" target="1.8" />
+      <module name="metricsprovider" target="1.8" />
+      <module name="mock" target="1.8" />
+      <module name="mockconsumer" target="1.8" />
+      <module name="mockprovider" target="1.8" />
+      <module name="monitor" target="1.8" />
       <module name="multi-registry" target="1.8" />
+      <module name="multiprotocol" target="1.8" />
+      <module name="multiprotocolconsumer" target="1.8" />
+      <module name="multiprotocolprovider" target="1.8" />
+      <module name="notify" target="1.8" />
+      <module name="notifyconsumer" target="1.8" />
+      <module name="notifyprovider" target="1.8" />
+      <module name="provider" target="1.8" />
+      <module name="pureapi" target="1.8" />
+      <module name="resilience4j" target="1.8" />
       <module name="resilience4jconsumer" target="1.8" />
       <module name="resilience4jprovider" target="1.8" />
+      <module name="rpccontext" target="1.8" />
+      <module name="sentinel" target="1.8" />
+      <module name="sentinelconsumer" target="1.8" />
+      <module name="sentinelprovider" target="1.8" />
+      <module name="spi" target="1.8" />
+      <module name="spiconsumer" target="1.8" />
+      <module name="spiprovider" target="1.8" />
+      <module name="stub" target="1.8" />
+      <module name="test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -86,6 +148,9 @@
       <module name="groupconsumer" options="-parameters" />
       <module name="groupprovider" options="-parameters" />
       <module name="http" options="-parameters" />
+      <module name="hystrix" options="-parameters" />
+      <module name="hystrixconsumer" options="-parameters" />
+      <module name="hystrixprovider" options="-parameters" />
       <module name="learnsamples" options="-parameters" />
       <module name="metrics" options="-parameters" />
       <module name="metricsconsumer" options="-parameters" />
