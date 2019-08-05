@@ -18,7 +18,7 @@ public class ConsumerApplication {
         reference.setRegistry(new RegistryConfig("zookeeper://127.0.0.1:2181"));
         reference.setInterface(HelloService.class);
         HelloService service = reference.get();
-        String message = service.hello("dubbo I am anla");
+        String message = service.hello("dubbo I am anla7856");
         System.out.println(message);
     }
 }
