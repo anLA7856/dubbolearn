@@ -34,6 +34,9 @@
         <module>sentinel</module>
         <module>spi</module>
         <module>hystrix</module>
+        <module>transaction</module>
+        <module>vaalidation</module>
+        <module>zipkin</module>
     </modules>
 
     <parent>
