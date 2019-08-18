@@ -1,9 +1,7 @@
 package com.anla.rpc.pureapi.provider;
 
 import com.anla.rpc.pureapi.service.HelloService;
-import org.apache.dubbo.config.ApplicationConfig;
-import org.apache.dubbo.config.RegistryConfig;
-import org.apache.dubbo.config.ServiceConfig;
+import org.apache.dubbo.config.*;
 
 import java.io.IOException;
 
@@ -16,7 +14,13 @@ public class ProviderApplication {
     public static void main(String[] args) throws IOException {
         ServiceConfig<HelloService> service = new ServiceConfig<>();
         service.setApplication(new ApplicationConfig("dubbo-provider"));
-        service.setRegistry(new RegistryConfig("zookeeper://127.0.0.1:2181"));
+        RegistryConfig registryConfig = new RegistryConfig("zookeeper://127.0.0.1:2181");
+        int port = Integer.valueOf(args[0]);
+        System.out.println(port);
+        ProtocolConfig protocolConfig = new ProtocolConfig();
+        protocolConfig.setPort(port);
+        service.setProtocol(protocolConfig);
+        service.setRegistry(registryConfig);
         service.setInterface(HelloService.class);
         service.setRef(new HelloServiceImpl());
         service.export();
