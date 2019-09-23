@@ -37,6 +37,7 @@
         <module>transaction</module>
         <module>vaalidation</module>
         <module>zipkin</module>
+        <module>merger</module>
     </modules>
 
     <parent>
