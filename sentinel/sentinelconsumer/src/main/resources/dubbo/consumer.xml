@@ -15,6 +15,6 @@
                            retry-period="4590" sync-report="true" retry-times="23"/>
 
     <dubbo:reference id="helloService" check="false" version="1.0.0"
-                     interface="com.anla.rpc.sentinel.provider.service.HelloService"/>
+                     interface="com.anla.rpc.conditions.sentinel.provider.service.HelloService"/>
 
 </beans>

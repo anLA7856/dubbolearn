@@ -15,8 +15,8 @@
     <dubbo:metadata-report address="zookeeper://127.0.0.1:2181" group="dubboMetadata" cycle-report="false"
                            retry-period="4590" sync-report="true" retry-times="23"/>
 
-    <bean id="helloServiceImpl" class="com.anla.rpc.sentinel.provider.service.impl.HelloServiceImpl"/>
+    <bean id="helloServiceImpl" class="com.anla.rpc.conditions.sentinel.provider.service.impl.HelloServiceImpl"/>
 
-    <dubbo:service interface="com.anla.rpc.sentinel.provider.service.HelloService"  version="1.0.0" ref="helloServiceImpl"/>
+    <dubbo:service interface="com.anla.rpc.conditions.sentinel.provider.service.HelloService" version="1.0.0" ref="helloServiceImpl"/>
 
 </beans>

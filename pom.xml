@@ -38,6 +38,7 @@
         <module>vaalidation</module>
         <module>zipkin</module>
         <module>merger</module>
+        <module>router</module>
     </modules>
 
     <parent>

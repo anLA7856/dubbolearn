@@ -16,7 +16,7 @@
     <dubbo:metrics port="20880" protocol="dubbo"/>
     <dubbo:provider filter="metrics" />
 
-    <bean id="helloServiceImpl" class="com.anla.rpc.metrics.provider.service.impl.HelloServiceImpl"/>
+    <bean id="helloServiceImpl" class="com.anla.rpc.conditions.metrics.provider.service.impl.HelloServiceImpl"/>
 
-    <dubbo:service interface="com.anla.rpc.metrics.provider.service.HelloService" ref="helloServiceImpl"/>
+    <dubbo:service interface="com.anla.rpc.conditions.metrics.provider.service.HelloService" ref="helloServiceImpl"/>
 </beans>

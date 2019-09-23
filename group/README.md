@@ -21,7 +21,7 @@ https://dubbo.apache.org/zh-cn/docs/user/references/metadata/introduction.html
 		"methods": "hello",
 		"deprecated": "false",
 		"dubbo": "2.0.2",
-		"interface": "com.anla.rpc.groupprovider.service.HelloService",
+		"interface": "HelloService",
 		"version": "1.0.0",
 		"timeout": "5000",
 		"generic": "false",
@@ -29,11 +29,11 @@ https://dubbo.apache.org/zh-cn/docs/user/references/metadata/introduction.html
 		"application": "provider",
 		"dynamic": "true",
 		"register": "true",
-		"bean.name": "com.anla.rpc.groupprovider.service.HelloService",
+		"bean.name": "HelloService",
 		"group": "groupCat",
 		"anyhost": "true"
 	},
-	"canonicalName": "com.anla.rpc.groupprovider.service.HelloService",
+	"canonicalName": "HelloService",
 	"codeSource": "file:/D:/IdeaProjects/dubbolearn/group/groupprovider/target/classes/",
 	"methods": [{
 		"name": "hello",

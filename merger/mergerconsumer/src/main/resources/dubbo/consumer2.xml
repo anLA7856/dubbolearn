@@ -12,7 +12,7 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-    <dubbo:reference id="helloService" interface="com.anla.rpc.mergerapi.HelloService"
+    <dubbo:reference id="helloService" interface="com.anla.rpc.conditions.mergerapi.HelloService"
                      group="merge3,merge2"/>
 
 </beans>

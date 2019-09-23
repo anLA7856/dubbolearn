@@ -12,8 +12,8 @@
 
     <dubbo:protocol name="dubbo" port="20880"/>
 
-    <bean id="helloServiceImpl" class="com.anla.rpc.notify.provider.service.impl.HelloServiceImpl"/>
+    <bean id="helloServiceImpl" class="com.anla.rpc.conditions.notify.provider.service.impl.HelloServiceImpl"/>
 
-    <dubbo:service interface="com.anla.rpc.notify.provider.service.HelloService" ref="helloServiceImpl" version="1.0.0"/>
+    <dubbo:service interface="com.anla.rpc.conditions.notify.provider.service.HelloService" ref="helloServiceImpl" version="1.0.0"/>
 
 </beans>

@@ -13,12 +13,12 @@
     <dubbo:protocol name="dubbo" port="20991"/>
     <dubbo:protocol name="hessian" port="20992" server="jetty"/>
 
-    <bean id="helloDubboServiceImpl" class="com.anla.rpc.multiprotocol.provider.service.impl.HelloDubboServiceImpl"/>
-    <dubbo:service protocol="dubbo" interface="com.anla.rpc.multiprotocol.provider.service.HelloDubboService" version="1.0.0"
+    <bean id="helloDubboServiceImpl" class="com.anla.rpc.conditions.multiprotocol.provider.service.impl.HelloDubboServiceImpl"/>
+    <dubbo:service protocol="dubbo" interface="com.anla.rpc.conditions.multiprotocol.provider.service.HelloDubboService" version="1.0.0"
                    ref="helloDubboServiceImpl"/>
 
 
-    <bean id="helloHessanServiceImpl" class="com.anla.rpc.multiprotocol.provider.service.impl.HelloHessanServiceImpl"/>
-    <dubbo:service protocol="hessian" interface="com.anla.rpc.multiprotocol.provider.service.HelloHessianService" version="1.0.0"
+    <bean id="helloHessanServiceImpl" class="com.anla.rpc.conditions.multiprotocol.provider.service.impl.HelloHessanServiceImpl"/>
+    <dubbo:service protocol="hessian" interface="com.anla.rpc.conditions.multiprotocol.provider.service.HelloHessianService" version="1.0.0"
                    ref="helloHessanServiceImpl"/>
 </beans>

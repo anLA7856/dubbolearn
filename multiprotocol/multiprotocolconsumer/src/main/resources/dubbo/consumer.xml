@@ -15,8 +15,8 @@
     <dubbo:protocol name="hessian" port="20992" server="jetty"/>
 
     <dubbo:reference id="helloDubboService" protocol="dubbo" version="1.0.0"
-                     interface="com.anla.rpc.multiprotocol.provider.service.HelloDubboService"/>
+                     interface="com.anla.rpc.conditions.multiprotocol.provider.service.HelloDubboService"/>
 
     <dubbo:reference id="helloHessianService" protocol="hessian" version="1.0.0"
-                     interface="com.anla.rpc.multiprotocol.provider.service.HelloHessianService"/>
+                     interface="com.anla.rpc.conditions.multiprotocol.provider.service.HelloHessianService"/>
 </beans>
