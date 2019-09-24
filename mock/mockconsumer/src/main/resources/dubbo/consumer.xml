@@ -10,7 +10,7 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-    <dubbo:reference id="helloService" check="false" interface="com.anla.rpc.conditions.mock.service.HelloService"
+    <dubbo:reference id="helloService" check="false" interface="com.anla.rpc.mock.service.HelloService"
                      mock="true"/>
 
 </beans>

@@ -15,12 +15,12 @@
     <dubbo:metadata-report address="zookeeper://127.0.0.1:2181" group="dubboMetadata" cycle-report="false"
                            retry-period="4590" sync-report="true" retry-times="23"/>
 
-    <bean id="helloCatService" class="com.anla.rpc.conditions.groupprovider.service.impl.HelloCatService"/>
+    <bean id="helloCatService" class="com.anla.rpc.groupprovider.service.impl.HelloCatService"/>
 
-    <bean id="helloDogService" class="com.anla.rpc.conditions.groupprovider.service.impl.HelloDogService"/>
+    <bean id="helloDogService" class="com.anla.rpc.groupprovider.service.impl.HelloDogService"/>
 
-    <dubbo:service group="groupCat" interface="com.anla.rpc.conditions.groupprovider.service.HelloService" version="1.0.0" ref="helloCatService"/>
+    <dubbo:service group="groupCat" interface="com.anla.rpc.groupprovider.service.HelloService" version="1.0.0" ref="helloCatService"/>
 
-    <dubbo:service group="groupDog" interface="com.anla.rpc.conditions.groupprovider.service.HelloService" version="1.0.0" ref="helloDogService"/>
+    <dubbo:service group="groupDog" interface="com.anla.rpc.groupprovider.service.HelloService" version="1.0.0" ref="helloDogService"/>
 
 </beans>

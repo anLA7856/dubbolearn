@@ -14,8 +14,8 @@
 
     <dubbo:protocol name="dubbo" port="20881"/>
 
-    <bean id="mergeService3" class="com.anla.rpc.conditions.mergerprovider2.impl.HelloServiceImpl3"/>
+    <bean id="mergeService3" class="com.anla.rpc.mergerprovider2.impl.HelloServiceImpl3"/>
 
-    <dubbo:service group="merge3" interface="com.anla.rpc.conditions.mergerapi.HelloService" ref="mergeService3"/>
+    <dubbo:service group="merge3" interface="com.anla.rpc.mergerapi.HelloService" ref="mergeService3"/>
 
 </beans>

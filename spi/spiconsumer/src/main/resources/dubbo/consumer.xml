@@ -9,5 +9,5 @@
 
     <dubbo:registry protocol="compatible" address="zookeeper://127.0.0.1:2181"/>
 
-    <dubbo:reference id="helloService" check="false" interface="com.anla.rpc.conditions.spi.provider.service.HelloService"/>
+    <dubbo:reference id="helloService" check="false" interface="com.anla.rpc.spi.provider.service.HelloService"/>
 </beans>

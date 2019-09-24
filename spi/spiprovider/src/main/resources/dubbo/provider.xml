@@ -12,8 +12,8 @@
 
     <dubbo:protocol name="compatible" port="20880"/>
 
-    <bean id="helloServiceImpl" class="com.anla.rpc.conditions.spi.provider.service.impl.HelloServiceImpl"/>
+    <bean id="helloServiceImpl" class="com.anla.rpc.spi.provider.service.impl.HelloServiceImpl"/>
 
-    <dubbo:service interface="com.anla.rpc.conditions.spi.provider.service.HelloService" ref="helloServiceImpl"/>
+    <dubbo:service interface="com.anla.rpc.spi.provider.service.HelloService" ref="helloServiceImpl"/>
 
 </beans>

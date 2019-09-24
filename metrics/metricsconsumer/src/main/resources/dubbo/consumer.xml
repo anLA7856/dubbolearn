@@ -10,6 +10,6 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-    <dubbo:reference id="helloService" check="true" interface="com.anla.rpc.conditions.metrics.provider.service.HelloService"/>
+    <dubbo:reference id="helloService" check="true" interface="com.anla.rpc.metrics.provider.service.HelloService"/>
 
 </beans>

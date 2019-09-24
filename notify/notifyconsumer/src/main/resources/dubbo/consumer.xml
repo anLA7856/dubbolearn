@@ -10,8 +10,8 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-    <bean id="notifyServiceImpl" class="com.anla.rpc.conditions.notify.consumer.api.impl.NotifyServiceImpl"/>
-    <dubbo:reference id="helloService" check="false" interface="com.anla.rpc.conditions.notify.provider.service.HelloService"
+    <bean id="notifyServiceImpl" class="com.anla.rpc.notify.consumer.api.impl.NotifyServiceImpl"/>
+    <dubbo:reference id="helloService" check="false" interface="com.anla.rpc.notify.provider.service.HelloService"
                      version="1.0.0" >
         <dubbo:method name="hello" async="false" onreturn="notifyServiceImpl.onReturn" onthrow="notifyServiceImpl.onThrow"/>
     </dubbo:reference>

@@ -12,9 +12,9 @@
 
     <dubbo:protocol name="dubbo" port="20880"/>
 
-    <bean id="callbackService" class="com.anla.rpc.conditions.callback.provider.impl.CallbackServiceImpl"/>
+    <bean id="callbackService" class="com.anla.rpc.callback.provider.impl.CallbackServiceImpl"/>
 
-    <dubbo:service interface="com.anla.rpc.conditions.callback.provider.service.CallbackService" ref="callbackService"
+    <dubbo:service interface="com.anla.rpc.callback.provider.service.CallbackService" ref="callbackService"
                    connections="1" callbacks="1000">
         <dubbo:method name="addListener">
             <dubbo:argument index="1" callback="true"/>

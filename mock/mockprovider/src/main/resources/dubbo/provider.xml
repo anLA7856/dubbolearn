@@ -11,8 +11,8 @@
 
     <dubbo:protocol name="dubbo" port="20880"/>
 
-    <bean id="helloServiceImpl" class="com.anla.rpc.conditions.mock.service.impl.HelloServiceImpl"/>
+    <bean id="helloServiceImpl" class="com.anla.rpc.mock.service.impl.HelloServiceImpl"/>
 
-    <dubbo:service interface="com.anla.rpc.conditions.mock.service.HelloService" ref="helloServiceImpl"/>
+    <dubbo:service interface="com.anla.rpc.mock.service.HelloService" ref="helloServiceImpl"/>
 
 </beans>
