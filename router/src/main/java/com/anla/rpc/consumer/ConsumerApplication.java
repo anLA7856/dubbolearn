@@ -5,6 +5,8 @@ import org.apache.dubbo.config.ApplicationConfig;
 import org.apache.dubbo.config.ReferenceConfig;
 import org.apache.dubbo.config.RegistryConfig;
 
+import java.io.IOException;
+
 /**
  * @author luoan
  * @version 1.0
@@ -12,7 +14,7 @@ import org.apache.dubbo.config.RegistryConfig;
  **/
 public class ConsumerApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ReferenceConfig<HelloService> reference = new ReferenceConfig<>();
         ApplicationConfig applicationConfig = new ApplicationConfig("dubbo-consumer");
         RegistryConfig registryConfig = new RegistryConfig("zookeeper://127.0.0.1:2181");
@@ -25,7 +27,8 @@ public class ConsumerApplication {
         String message2 = service.hello2("router2");
         System.out.println(message2);
 
-
+        System.in.read();
+        System.out.println(message2);
 //        ReferenceConfig<HelloService2> reference2 = new ReferenceConfig<>();
 //        reference2.setApplication(applicationConfig);
 //        reference2.setRegistry(registryConfig);
