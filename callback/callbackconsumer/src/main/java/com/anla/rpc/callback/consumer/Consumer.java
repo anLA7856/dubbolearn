@@ -1,5 +1,6 @@
 package com.anla.rpc.callback.consumer;
 
+import com.anla.rpc.callback.provider.service.CallbackListener;
 import com.anla.rpc.callback.provider.service.CallbackService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -16,6 +17,15 @@ public class Consumer {
 
         CallbackService callbackService = context.getBean("callbackService", CallbackService.class);
         // 增加listener
-        callbackService.addListener("foo.bar", msg -> System.out.println("callback:" + msg));
+        callbackService.addListener("foo.bar", new CallBackDemo());
+    }
+
+
+    static class CallBackDemo implements CallbackListener{
+
+        @Override
+        public void changed(String msg) {
+            System.out.println("I am callback:" + msg);
+        }
     }
 }
