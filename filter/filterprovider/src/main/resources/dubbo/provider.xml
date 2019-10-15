@@ -10,8 +10,8 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-    <dubbo:protocol name="dubbo" port="20880"/>
-
+    <dubbo:protocol name="dubbo" port="20880" />
+    <dubbo:provider filter="trace1"/>
     <bean id="helloService" class="com.anla.rpc.filter.provider.service.impl.HelloServiceImpl"/>
 
     <dubbo:service interface="com.anla.rpc.filter.provider.service.HelloService" ref="helloService"/>

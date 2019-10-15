@@ -18,7 +18,7 @@ public class Consumer {
         System.out.println(hello);
         Dog dog = helloService.getDog(1);
         System.out.println(dog);
-        Dog badDog = helloService.getDog(0);
-        System.out.println(badDog);
+//        Dog badDog = helloService.getDog(0);
+//        System.out.println(badDog);
     }
 }
