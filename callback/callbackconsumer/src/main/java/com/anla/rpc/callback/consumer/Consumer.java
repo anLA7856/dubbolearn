@@ -22,7 +22,7 @@ public class Consumer {
 
 
     static class CallBackDemo implements CallbackListener{
-
+        private Integer integer = 1;
         @Override
         public void changed(String msg) {
             System.out.println("I am callback:" + msg);
