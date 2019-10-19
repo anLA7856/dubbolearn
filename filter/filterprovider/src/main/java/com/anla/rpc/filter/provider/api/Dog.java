@@ -1,5 +1,7 @@
 package com.anla.rpc.filter.provider.api;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -7,21 +9,9 @@ import java.io.Serializable;
  * @date 19-7-18 下午11:35
  * @description
  */
+@Data
 public class Dog implements Serializable {
-   private String name;
+    private String name;
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Dog{" +
-                "name='" + name + '\'' +
-                '}';
-    }
 }

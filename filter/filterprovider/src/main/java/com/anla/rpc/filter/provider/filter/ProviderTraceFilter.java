@@ -10,15 +10,16 @@ import org.apache.dubbo.rpc.*;
  * @description
  */
 @Activate(group = {"provider"})
-public class TraceFilter implements Filter {
+public class ProviderTraceFilter implements Filter {
     @Override
     public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
         Result result = invoker.invoke(invocation);
         Object object = result.getValue();
         if (object instanceof Dog) {
             Dog dog = (Dog) object;
-            dog.setName("traceFilter: " + dog.getName());
+            dog.setName("providerFilter: " + dog.getName());
         }
+        System.out.println("traceFilter from Provider");
         return result;
     }
 

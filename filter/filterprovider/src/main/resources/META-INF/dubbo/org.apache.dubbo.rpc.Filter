@@ -1,1 +1,1 @@
-trace1=com.anla.rpc.filter.provider.filter.TraceFilter
+traceProvider=com.anla.rpc.filter.provider.filter.ProviderTraceFilter

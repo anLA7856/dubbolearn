@@ -1,0 +1,1 @@
+traceConsumer=com.anla.rpc.filter.consumer.filter.ConsumerTraceFilter

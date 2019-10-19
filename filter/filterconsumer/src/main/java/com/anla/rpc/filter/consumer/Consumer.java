@@ -14,8 +14,6 @@ public class Consumer {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("dubbo/consumer.xml");
         context.start();
         HelloService helloService = (HelloService) context.getBean("helloService");
-        String hello = helloService.hello("anla7856");
-        System.out.println(hello);
         Dog dog = helloService.getDog(1);
         System.out.println(dog);
 //        Dog badDog = helloService.getDog(0);
