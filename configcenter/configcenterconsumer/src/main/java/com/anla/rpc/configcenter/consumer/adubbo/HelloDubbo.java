@@ -1,8 +1,9 @@
-package com.anla.rpc.configcenter.dubbo;
+package com.anla.rpc.configcenter.consumer.adubbo;
 
 import com.anla.rpc.configcenter.provider.service.HelloService;
-import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * @author anLA7856
@@ -12,8 +13,12 @@ import org.springframework.stereotype.Component;
 @Component("helloDubbo")
 public class HelloDubbo {
 
-    @Reference(version = "1.0.0")
+
     HelloService helloService;
+    @Resource
+    public void setHelloService(HelloService helloService) {
+        this.helloService = helloService;
+    }
 
     public String hello(String name){
         return helloService.hello(name);

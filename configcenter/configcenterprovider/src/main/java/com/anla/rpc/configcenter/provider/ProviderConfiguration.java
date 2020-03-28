@@ -1,4 +1,4 @@
-package com.anla.rpc.configcenter.provider.config;
+package com.anla.rpc.configcenter.provider;
 
 import org.apache.dubbo.config.ProviderConfig;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;

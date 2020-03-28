@@ -1,6 +1,5 @@
 package com.anla.rpc.configcenter.provider;
 
-import com.anla.rpc.configcenter.provider.config.ProviderConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.concurrent.CountDownLatch;

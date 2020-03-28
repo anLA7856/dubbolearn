@@ -1,7 +1,7 @@
-package com.anla.rpc.configcenter;
+package com.anla.rpc.configcenter.consumer;
 
-import com.anla.rpc.configcenter.dubbo.HelloDubbo;
-import com.anla.rpc.configcenter.config.ConsumerConfig;
+import com.anla.rpc.configcenter.consumer.adubbo.HelloDubbo;
+import com.anla.rpc.configcenter.consumer.config.ConsumerConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

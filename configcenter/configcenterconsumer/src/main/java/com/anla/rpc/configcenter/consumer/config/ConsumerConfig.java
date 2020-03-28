@@ -1,4 +1,4 @@
-package com.anla.rpc.configcenter.config;
+package com.anla.rpc.configcenter.consumer.config;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,9 +11,9 @@ import org.springframework.context.annotation.PropertySource;
  * @description
  */
 @Configuration
-@EnableDubbo(scanBasePackages = "com.anla.rpc.configcenter.dubbo", multipleConfig = true)   // 扫描 dubbo 包，主要是refernence注解等，开启多注册中心
+@EnableDubbo(scanBasePackages = "com.anla.rpc.configcenter.consumer", multipleConfig = true)   // 扫描 dubbo 包，主要是refernence注解等，开启多注册中心
 @PropertySource("classpath:/dubbo/consumer.properties")
-@ComponentScan(value = {"com.anla.rpc.configcenter.dubbo"})
+@ComponentScan(value = {"com.anla.rpc.configcenter.consumer"})
 public class ConsumerConfig {
 
 }
