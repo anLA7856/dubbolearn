@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @version 1.0
  * @date 2020/3/28 13:30
  **/
-@Configuration
+// @Configuration
 public class MyPriorityReferenceConfig {
     @Reference(version = "1.0.0", check = false)
     HelloService helloService;
