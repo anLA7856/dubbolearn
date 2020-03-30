@@ -1,6 +1,7 @@
 package com.anla.rpc.configcenter.consumer.config;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -15,5 +16,14 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:/dubbo/consumer.properties")
 @ComponentScan(value = {"com.anla.rpc.configcenter.consumer"})
 public class ConsumerConfig {
+
+    @Bean
+    public Dog dog(){
+        return new Dog();
+    }
+
+    @Bean
+    public void cat(){
+    }
 
 }

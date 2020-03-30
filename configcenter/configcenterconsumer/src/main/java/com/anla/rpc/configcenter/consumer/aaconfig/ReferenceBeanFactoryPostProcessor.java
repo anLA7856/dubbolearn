@@ -17,9 +17,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.BridgeMethodResolver;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.core.annotation.AnnotationAttributes;
+import org.springframework.core.type.MethodMetadata;
+import org.springframework.core.type.StandardMethodMetadata;
 import org.springframework.lang.Nullable;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ReflectionUtils;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.lang.annotation.Annotation;
@@ -147,8 +150,28 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
             BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanName);
             String beanClassName = beanDefinition.getBeanClassName();
             try {
-                Class clazz = Class.forName(beanClassName);
-                buildReferenceMetadata(clazz, beanName);
+                if(!StringUtils.isEmpty(beanClassName)){
+                    Class clazz = Class.forName(beanClassName);
+                    buildReferenceMetadata(clazz, beanName);
+                }else {
+                    if (!(beanDefinition instanceof RootBeanDefinition)){
+                        logger.info("beanDefinition is  not a RootBeanDefinition");
+                        continue;
+                    }
+                    RootBeanDefinition rootBeanDefinition = (RootBeanDefinition) beanDefinition;
+                    Object source = rootBeanDefinition.getSource();
+                    if (!(source instanceof MethodMetadata)){
+                        logger.info("methodMetadata is null");
+                        continue;
+                    }
+                    MethodMetadata methodMetadata = (MethodMetadata) source;
+                    if(!methodMetadata.getReturnTypeName().equals(Void.TYPE.toString())){
+                        Class clazz = Class.forName(methodMetadata.getReturnTypeName());
+                        buildReferenceMetadata(clazz, beanName);
+                    }else {
+                        logger.info("method has no return type");
+                    }
+                }
             } catch (ClassNotFoundException e) {
                 logger.info("beanClassName can not be loaded:" + beanClassName);
             }
