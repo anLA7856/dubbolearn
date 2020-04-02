@@ -60,7 +60,6 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
     public ReferenceBeanFactoryPostProcessor() {
         this.referenceAnnotationTypes.add(Reference.class);
         this.autowiredAnnotationTypes.add(Autowired.class);
-        this.autowiredAnnotationTypes.add(Value.class);
         this.autowiredAnnotationTypes.add(Resource.class);
         try {
             this.autowiredAnnotationTypes.add((Class<? extends Annotation>)
@@ -81,7 +80,7 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
                 if (ann != null) {
                     if (Modifier.isStatic(field.getModifiers())) {
                         if (logger.isInfoEnabled()) {
-                            logger.info("Autowired annotation is not supported on static fields: " + field);
+                            logger.info("Annotation is not supported on static fields: " + field);
                         }
                         return;
                     }
@@ -176,7 +175,7 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
                         return;
                     }
                     String name = field.getType().getName();
-                    if (this.referenceIdToBeanNames.keySet().contains(name) && !referenceHasInit.get(name)){
+                    if (this.referenceIdToBeanNames.containsKey(name) && !referenceHasInit.get(name)){
                         Set<String> beanNames = referenceIdToBeanNames.get(name);
                         beanNames.forEach(t->beanFactory.getBean(t));
                         referenceHasInit.put(name, Boolean.TRUE);
@@ -193,20 +192,20 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
                 if (ann != null && method.equals(ClassUtils.getMostSpecificMethod(method, beanType))) {
                     if (Modifier.isStatic(method.getModifiers())) {
                         if (logger.isInfoEnabled()) {
-                            logger.info("Autowired annotation is not supported on static methods: " + method);
+                            logger.info("Reference annotation is not supported on static methods: " + method);
                         }
                         return;
                     }
                     if (method.getParameterCount() == 0) {
                         if (logger.isInfoEnabled()) {
-                            logger.info("Autowired annotation should only be used on methods with parameters: " +
+                            logger.info("Reference annotation should only be used on methods with parameters: " +
                                     method);
                         }
                     }
                     Class<?>[] parameterTypes = method.getParameterTypes();
                     for (Class<?> clazz : parameterTypes){
                         String name = clazz.getName();
-                        if (this.referenceIdToBeanNames.keySet().contains(name) && !referenceHasInit.get(name)){
+                        if (this.referenceIdToBeanNames.containsKey(name) && !referenceHasInit.get(name)){
                             Set<String> beanNames = referenceIdToBeanNames.get(name);
                             beanNames.forEach(t->beanFactory.getBean(t));
                             referenceHasInit.put(name, Boolean.TRUE);
@@ -223,6 +222,10 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        this.beanFactory = beanFactory;
+        if (!(beanFactory instanceof ConfigurableListableBeanFactory)) {
+            throw new IllegalArgumentException(
+                    "ReferenceBeanFactoryPostProcessor requires a ConfigurableListableBeanFactory: " + beanFactory);
+        }
+        this.beanFactory = (ConfigurableListableBeanFactory) beanFactory;
     }
 }
