@@ -147,33 +147,11 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         for(String beanName : beanFactory.getBeanDefinitionNames()){
-            BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanName);
-            String beanClassName = beanDefinition.getBeanClassName();
-            try {
-                if(!StringUtils.isEmpty(beanClassName)){
-                    Class clazz = Class.forName(beanClassName);
-                    buildReferenceMetadata(clazz, beanName);
-                }else {
-                    if (!(beanDefinition instanceof RootBeanDefinition)){
-                        logger.info("beanDefinition is  not a RootBeanDefinition");
-                        continue;
-                    }
-                    RootBeanDefinition rootBeanDefinition = (RootBeanDefinition) beanDefinition;
-                    Object source = rootBeanDefinition.getSource();
-                    if (!(source instanceof MethodMetadata)){
-                        logger.info("methodMetadata is null");
-                        continue;
-                    }
-                    MethodMetadata methodMetadata = (MethodMetadata) source;
-                    if(!methodMetadata.getReturnTypeName().equals(Void.TYPE.toString())){
-                        Class clazz = Class.forName(methodMetadata.getReturnTypeName());
-                        buildReferenceMetadata(clazz, beanName);
-                    }else {
-                        logger.info("method has no return type");
-                    }
-                }
-            } catch (ClassNotFoundException e) {
-                logger.info("beanClassName can not be loaded:" + beanClassName);
+            Class<?> clazz = beanFactory.getType(beanName);
+            if (clazz != null){
+                buildReferenceMetadata(clazz, beanName);
+            }else {
+                logger.debug(beanName + " class not found");
             }
         }
     }
