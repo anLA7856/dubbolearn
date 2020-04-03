@@ -6,9 +6,8 @@ import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanFactoryUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.MergedBeanDefinitionPostProcessor;
@@ -17,12 +16,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.BridgeMethodResolver;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.core.annotation.AnnotationAttributes;
-import org.springframework.core.type.MethodMetadata;
-import org.springframework.core.type.StandardMethodMetadata;
 import org.springframework.lang.Nullable;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ReflectionUtils;
-import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.lang.annotation.Annotation;
@@ -145,7 +141,9 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        for(String beanName : beanFactory.getBeanDefinitionNames()){
+        String[] beanNames = BeanFactoryUtils.beanNamesForTypeIncludingAncestors(
+                beanFactory, Object.class, true, false);
+        for(String beanName : beanNames){
             Class<?> clazz = beanFactory.getType(beanName);
             if (clazz != null){
                 buildReferenceMetadata(clazz, beanName);
