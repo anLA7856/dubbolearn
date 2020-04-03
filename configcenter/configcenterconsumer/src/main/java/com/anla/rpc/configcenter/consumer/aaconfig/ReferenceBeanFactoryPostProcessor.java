@@ -141,8 +141,9 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        String[] beanNames = BeanFactoryUtils.beanNamesForTypeIncludingAncestors(
-                beanFactory, Object.class, true, false);
+//        String[] beanNames = BeanFactoryUtils.beanNamesForTypeIncludingAncestors(
+//                beanFactory, Object.class, true, false);
+        String[] beanNames = beanFactory.getBeanDefinitionNames();
         for(String beanName : beanNames){
             Class<?> clazz = beanFactory.getType(beanName);
             if (clazz != null){
