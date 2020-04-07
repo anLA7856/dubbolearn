@@ -26,10 +26,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -69,62 +66,72 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
     }
 
     private void buildReferenceMetadata(final Class<?> clazz, String beanName) {
-        Class<?> targetClass = clazz;
+        findOrInjectAnnotation(clazz, (FindCallback) this::cacheRef, beanName, referenceAnnotationTypes, Reference.class.getName());
+    }
 
+    private void findOrInjectAnnotation(Class<?> targetClass, CallBack callBack, String beanName, Set<Class<? extends Annotation>> annotationTypes, String type) {
         do {
             ReflectionUtils.doWithLocalFields(targetClass, field -> {
-                AnnotationAttributes ann = findAnnotation(field, this.referenceAnnotationTypes);
+                AnnotationAttributes ann = findAnnotation(field, annotationTypes);
                 if (ann != null) {
                     if (Modifier.isStatic(field.getModifiers())) {
                         if (logger.isInfoEnabled()) {
-                            logger.info("Annotation is not supported on static fields: " + field);
+                            logger.info(type + " is not supported on static fields: " + field);
                         }
                         return;
                     }
                     String name = field.getType().getName();
-                    Set<String> beanNames = referenceIdToBeanNames.get(name);
-                    if (beanNames == null){
-                        beanNames = new HashSet<>();
-                        referenceHasInit.put(name, Boolean.FALSE);
-                    }
-                    beanNames.add(beanName);
-                    referenceIdToBeanNames.put(name, beanNames);
+                    callBack.callback(name, beanName);
                 }
             });
 
+            Class<?> finalTargetClass = targetClass;
             ReflectionUtils.doWithLocalMethods(targetClass, method -> {
                 Method bridgedMethod = BridgeMethodResolver.findBridgedMethod(method);
                 if (!BridgeMethodResolver.isVisibilityBridgeMethodPair(method, bridgedMethod)) {
                     return;
                 }
-                AnnotationAttributes ann = findAnnotation(bridgedMethod, this.referenceAnnotationTypes);
-                if (ann != null && method.equals(ClassUtils.getMostSpecificMethod(method, clazz))) {
+                AnnotationAttributes ann = findAnnotation(bridgedMethod, annotationTypes);
+                if (ann != null && method.equals(ClassUtils.getMostSpecificMethod(method, finalTargetClass))) {
                     if (Modifier.isStatic(method.getModifiers())) {
                         if (logger.isInfoEnabled()) {
-                            logger.info("Autowired annotation is not supported on static methods: " + method);
+                            logger.info(type + " annotation is not supported on static methods: " + method);
                         }
                         return;
                     }
                     if (method.getParameterCount() == 0) {
                         if (logger.isInfoEnabled()) {
-                            logger.info("Autowired annotation should only be used on methods with parameters: " +
+                            logger.info(type + " annotation should only be used on methods with parameters: " +
                                     method);
                         }
                     }
-                    String name = method.getReturnType().getName();
-                    Set<String> beanNames = referenceIdToBeanNames.get(name);
-                    if (beanNames == null){
-                        beanNames = new HashSet<>();
-                        referenceHasInit.put(name, Boolean.FALSE);
+                    if (callBack instanceof FindCallback){
+                        String name = method.getReturnType().getName();
+                        callBack.callback(name, beanName);
+                    }else {
+                        Class<?>[] parameterTypes = method.getParameterTypes();
+                        for (Class<?> clazz : parameterTypes){
+                            String name = clazz.getName();
+                            callBack.callback(name, beanName);
+                        }
                     }
-                    beanNames.add(beanName);
-                    referenceIdToBeanNames.put(name, beanNames);
+
                 }
             });
 
             targetClass = targetClass.getSuperclass();
         }
         while (targetClass != null && targetClass != Object.class);
+    }
+
+    private void cacheRef(String name, String beanName) {
+        Set<String> beanNames = referenceIdToBeanNames.get(name);
+        if (beanNames == null){
+            beanNames = new HashSet<>();
+            referenceHasInit.put(name, Boolean.FALSE);
+        }
+        beanNames.add(beanName);
+        referenceIdToBeanNames.put(name, beanNames);
     }
 
     @Nullable
@@ -143,8 +150,6 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-//        String[] beanNames = BeanFactoryUtils.beanNamesForTypeIncludingAncestors(
-//                beanFactory, Object.class, true, false);
         String[] beanNames = beanFactory.getBeanDefinitionNames();
         for(String beanName : beanNames){
             Class<?> clazz = beanFactory.getType(beanName);
@@ -159,66 +164,19 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
 
     @Override
     public void postProcessMergedBeanDefinition(RootBeanDefinition beanDefinition, Class<?> beanType, String beanName) {
-        initReferenceIfNess(beanType);
+        initReference(beanType, beanName);
     }
 
-    private void initReferenceIfNess(Class<?> beanType) {
-        Class<?> targetClass = beanType;
+    private void initReference(Class<?> beanType, String beanName) {
+        findOrInjectAnnotation(beanType, (InjectCallback) this::doInitReference, beanName, this.autowiredAnnotationTypes, Autowired.class.getName());
+    }
 
-        do {
-            ReflectionUtils.doWithLocalFields(targetClass, field -> {
-                AnnotationAttributes ann = findAnnotation(field, this.autowiredAnnotationTypes);
-                if (ann != null) {
-                    if (Modifier.isStatic(field.getModifiers())) {
-                        if (logger.isInfoEnabled()) {
-                            logger.info("Autowired annotation is not supported on static fields: " + field);
-                        }
-                        return;
-                    }
-                    String name = field.getType().getName();
-                    if (this.referenceIdToBeanNames.containsKey(name) && !referenceHasInit.get(name)){
-                        Set<String> beanNames = referenceIdToBeanNames.get(name);
-                        beanNames.forEach(t->beanFactory.getBean(t));
-                        referenceHasInit.put(name, Boolean.TRUE);
-                    }
-                }
-            });
-
-            ReflectionUtils.doWithLocalMethods(targetClass, method -> {
-                Method bridgedMethod = BridgeMethodResolver.findBridgedMethod(method);
-                if (!BridgeMethodResolver.isVisibilityBridgeMethodPair(method, bridgedMethod)) {
-                    return;
-                }
-                AnnotationAttributes ann = findAnnotation(bridgedMethod,this.autowiredAnnotationTypes);
-                if (ann != null && method.equals(ClassUtils.getMostSpecificMethod(method, beanType))) {
-                    if (Modifier.isStatic(method.getModifiers())) {
-                        if (logger.isInfoEnabled()) {
-                            logger.info("Reference annotation is not supported on static methods: " + method);
-                        }
-                        return;
-                    }
-                    if (method.getParameterCount() == 0) {
-                        if (logger.isInfoEnabled()) {
-                            logger.info("Reference annotation should only be used on methods with parameters: " +
-                                    method);
-                        }
-                    }
-                    Class<?>[] parameterTypes = method.getParameterTypes();
-                    for (Class<?> clazz : parameterTypes){
-                        String name = clazz.getName();
-                        if (this.referenceIdToBeanNames.containsKey(name) && !referenceHasInit.get(name)){
-                            Set<String> beanNames = referenceIdToBeanNames.get(name);
-                            beanNames.forEach(t->beanFactory.getBean(t));
-                            referenceHasInit.put(name, Boolean.TRUE);
-                        }
-                    }
-
-                }
-            });
-
-            targetClass = targetClass.getSuperclass();
+    private void doInitReference(String name, String beanName) {
+        if (this.referenceIdToBeanNames.containsKey(name) && !referenceHasInit.get(name)){
+            Set<String> beanNames = referenceIdToBeanNames.get(name);
+            beanNames.forEach(t->beanFactory.getBean(t));
+            referenceHasInit.put(name, Boolean.TRUE);
         }
-        while (targetClass != null && targetClass != Object.class);
     }
 
     @Override
@@ -228,5 +186,16 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
                     "ReferenceBeanFactoryPostProcessor requires a ConfigurableListableBeanFactory: " + beanFactory);
         }
         this.beanFactory = beanFactory;
+    }
+
+    interface CallBack{
+        void callback(String name, String beanName);
+    }
+
+    interface FindCallback extends CallBack{
+
+    }
+    interface InjectCallback extends CallBack{
+
     }
 }
