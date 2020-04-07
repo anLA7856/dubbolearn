@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.BridgeMethodResolver;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.core.annotation.AnnotationAttributes;
+import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ReflectionUtils;
@@ -50,7 +51,7 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
     private Map<String, Set<String>> referenceIdToBeanNames = new ConcurrentHashMap<>(256);
     private Map<String, Boolean> referenceHasInit = new ConcurrentHashMap<>(256);
 
-    @Nullable
+    @NonNull
     private BeanFactory beanFactory;
 
     public ReferenceBeanFactoryPostProcessor() {
@@ -130,6 +131,7 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
     private AnnotationAttributes findAnnotation(AccessibleObject ao, Set<Class<? extends Annotation>> autowiredAnnotationTypes) {
         if (ao.getAnnotations().length > 0) {
             for (Class<? extends Annotation> type : autowiredAnnotationTypes) {
+                // same effects with AnnotatedElementUtils.getMergedAnnotation
                 AnnotationAttributes attributes = AnnotatedElementUtils.getMergedAnnotationAttributes(ao, type);
                 if (attributes != null) {
                     return attributes;
@@ -225,6 +227,6 @@ public class ReferenceBeanFactoryPostProcessor implements BeanFactoryPostProcess
             throw new IllegalArgumentException(
                     "ReferenceBeanFactoryPostProcessor requires a ConfigurableListableBeanFactory: " + beanFactory);
         }
-        this.beanFactory = (ConfigurableListableBeanFactory) beanFactory;
+        this.beanFactory = beanFactory;
     }
 }
