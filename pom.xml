@@ -39,6 +39,7 @@
         <module>zipkin</module>
         <module>merger</module>
         <module>router</module>
+        <module>spring-cloud-demo</module>
     </modules>
 
     <parent>

@@ -1,0 +1,31 @@
+#不启用外部化配置
+spring.cloud.nacos.config.enabled: false
+dubbo:
+  scan:
+    base-packages: com.anla.springcloud.demo.provider
+  protocols:
+    dubbo:
+      name: dubbo
+      port: -1
+  registry:
+    address: zookeeper://10.8.223.6:2181
+    timeout: 25000
+  cloud:
+    subscribed-services:
+  consumer:
+    check: false
+    timeout: 10000
+  provider:
+    timeout: 10000
+    version: 1024
+
+#以下为dev nacos的配置
+spring:
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181
+    loadbalancer:
+      retry:
+        enabled: true
+
+

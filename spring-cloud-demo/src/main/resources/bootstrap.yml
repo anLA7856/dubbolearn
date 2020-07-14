@@ -1,0 +1,29 @@
+
+spring:
+  application:
+    name: spring-cloud-demo-service
+  profiles:
+    active: local2test
+  cloud:
+    nacos:
+      config:
+        server-addr: 10.8.223.6:8848
+        file-extension: yml
+        namespace: e83b4814-6af0-4954-ae99-d8c554f7c593
+  main:
+    allow-bean-definition-overriding: true
+logging:
+  config: classpath:logback.xml
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+server:
+  port: 8004
